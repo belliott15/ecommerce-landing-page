@@ -1,3 +1,9 @@
+/* root css for standard colors and font */
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
