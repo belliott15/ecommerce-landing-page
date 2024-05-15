@@ -1,9 +1,34 @@
 /* root css for standard colors and font */
 /* navbar */
 .navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 18px;
+  height: 2rem;
+}
+.nav-left {
   display: flex;
   justify-content: space-between;
 }
+.nav-left img {
+  height: 70%;
+}
+.nav-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 2rem;
+}
+.nav-right img:nth-child(2) {
+  height: 2rem;
+  margin-left: 18px;
+}
+
+/* main body */
+.carousel-image {
+  height: 10rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
