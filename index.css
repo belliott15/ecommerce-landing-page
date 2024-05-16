@@ -62,6 +62,25 @@
   border-radius: 100%;
 }
 
+/* description */
+.product-description p:nth-child(1) {
+  color: var(--orange);
+}
+.product-description p:nth-child(3) {
+  color: var(--grayish-blue);
+}
+
+.product-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.product-cart {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
