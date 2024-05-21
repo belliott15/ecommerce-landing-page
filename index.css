@@ -56,17 +56,36 @@ body {
 .menu-visible {
   position: absolute;
   left: 0;
+  top: 0;
   height: 100vh;
   background: white;
   z-index: 999;
   display: block;
+  padding: 1rem 3rem 0 1rem;
 }
-.nav-menu ul {
-  list-style-type: none;
+ul {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  list-style-type: none;
   padding: 0;
+}
+li {
+  padding: 1rem;
+  font-weight: bolder;
+}
+.hidden {
+  visibility: hidden;
+}
+.blur {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsla(0, 0%, 20%, 0.397);
+  padding: 0;
+  margin: 0;
+  z-index: 998;
+  visibility: block;
 }
 
 /* main body */
