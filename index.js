@@ -67,20 +67,22 @@ const slideImage = (oldSrc, newSrc, direction) => {
 
 leftArrow.addEventListener("click", () => {
   counter = counter <= 1 ? 4 : counter - 1;
-  slideImage(
-    `./images/image-product-${counter}.jpg`,
-    `./images/image-product-${counter - 1}.jpg`,
-    "left"
-  );
+  carouselImage.src = `./images/image-product-${counter}.jpg`;
+  // slideImage(
+  //   `./images/image-product-${counter}.jpg`,
+  //   `./images/image-product-${counter - 1}.jpg`,
+  //   "left"
+  // );
 });
 
 rightArrow.addEventListener("click", () => {
   counter = counter >= 4 ? 1 : counter + 1;
-  slideImage(
-    `./images/image-product-${counter}.jpg`,
-    `./images/image-product-${counter + 1}.jpg`,
-    "right"
-  );
+  carouselImage.src = `./images/image-product-${counter}.jpg`;
+  // slideImage(
+  //   `./images/image-product-${counter}.jpg`,
+  //   `./images/image-product-${counter + 1}.jpg`,
+  //   "right"
+  // );
 });
 
 // quantity and add to cart section
