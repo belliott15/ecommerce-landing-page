@@ -57,9 +57,13 @@ rightArrow.addEventListener("click", () => {
 
 // quantity and add to cart section
 minusButton.addEventListener("click", () => {
-  quantity.textContent -= 1;
+  if (quantity.textContent >= 1) {
+    quantity.textContent -= 1;
+  } else {
+    return;
+  }
 });
 
 plusButton.addEventListener("click", () => {
-  quantity.textContent += 1;
+  quantity.textContent = Number(quantity.textContent) + 1;
 });
