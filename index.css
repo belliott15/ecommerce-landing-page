@@ -95,37 +95,39 @@ li {
   overflow: hidden;
   max-height: 350px;
 }
+.carousel-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
 .carousel-image {
   display: block;
   height: auto;
   width: 100%;
   max-width: none;
   margin: 0 auto;
-  transition: transform 0.3s ease;
 }
 
-.carousel-button-left {
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  height: 200px;
-  width: 50px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
+.carousel-button-left,
 .carousel-button-right {
   position: absolute;
   top: 50%;
-  right: 0px;
   height: 200px;
   width: 50px;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
+}
+.carousel-button-left {
+  left: 0px;
+  z-index: 999;
+}
+
+.carousel-button-right {
+  right: 0px;
 }
 
 /* description */

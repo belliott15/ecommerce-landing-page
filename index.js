@@ -5,11 +5,15 @@ const blur = document.querySelector("#blur");
 const logo = document.querySelector("#logo");
 const cartIcon = document.querySelector("#cart-icon");
 const avatarIcon = document.querySelector("#avatar-icon");
+const imageContainer = document.querySelector("#carouselImageContainer");
 const leftArrow = document.querySelector(".carousel-button-left");
 const rightArrow = document.querySelector(".carousel-button-right");
+const carouselImage = document.querySelector("#carousel-image");
 const minusButton = document.querySelector(".minus-button");
 const plusButton = document.querySelector(".plus-button");
 const quantity = document.querySelector(".quantity");
+
+let counter = 0;
 
 // nav bar section
 menuIcon.addEventListener("click", () => {
@@ -48,11 +52,37 @@ avatarIcon.addEventListener("click", () => {
 });
 
 // carousel section
+
+const slideImage = (oldSrc, newSrc, direction) => {
+  const slideAmount = direction === "left" ? "-100%" : "100%";
+  imageContainer.style.transform = `translateX(${slideAmount})`;
+  setTimeout(() => {
+    imageContainer.innerHTML = `
+    <img src='${oldSrc}' class='carousel-image' alt='beige sneaker with orange background'/>
+    <img src='${newSrc}' class='carousel-image' alt='beige sneaker with orange background'/>
+    `;
+    imageContainer.style.transform = "translateX(0)";
+  }, 500);
+};
+
 leftArrow.addEventListener("click", () => {
-  console.log("left arrow");
+  counter = counter <= 1 ? 4 : counter - 1;
+  carouselImage.src = `./images/image-product-${counter}.jpg`;
+  // slideImage(
+  //   `./images/image-product-${counter}.jpg`,
+  //   `./images/image-product-${counter - 1}.jpg`,
+  //   "left"
+  // );
 });
+
 rightArrow.addEventListener("click", () => {
-  console.log("right arrow");
+  counter = counter >= 4 ? 1 : counter + 1;
+  carouselImage.src = `./images/image-product-${counter}.jpg`;
+  // slideImage(
+  //   `./images/image-product-${counter}.jpg`,
+  //   `./images/image-product-${counter + 1}.jpg`,
+  //   "right"
+  // );
 });
 
 // quantity and add to cart section
