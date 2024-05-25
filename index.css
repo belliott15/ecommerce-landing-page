@@ -87,6 +87,19 @@ li {
   z-index: 998;
   visibility: block;
 }
+.cart-quicklook {
+  position: absolute;
+  border-radius: 100%;
+  background-color: red;
+  color: white;
+  height: 15px;
+  width: 15px;
+  top: 3%;
+  right: 15%;
+  display: flex;
+  justify-content: center;
+  font-size: x-small;
+}
 
 /* main body */
 
