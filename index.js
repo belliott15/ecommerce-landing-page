@@ -12,6 +12,7 @@ const carouselImage = document.querySelector("#carousel-image");
 const minusButton = document.querySelector(".minus-button");
 const plusButton = document.querySelector(".plus-button");
 const quantity = document.querySelector(".quantity");
+const addToCart = document.querySelector(".add-to-cart");
 
 let counter = 0;
 
@@ -87,13 +88,15 @@ rightArrow.addEventListener("click", () => {
 
 // quantity and add to cart section
 minusButton.addEventListener("click", () => {
-  if (quantity.textContent >= 1) {
-    quantity.textContent -= 1;
-  } else {
-    return;
-  }
+  quantity.textContent >= 1
+    ? (quantity.textContent -= 1)
+    : (quantity.textContent = 0);
 });
 
 plusButton.addEventListener("click", () => {
   quantity.textContent = Number(quantity.textContent) + 1;
+});
+
+addToCart.addEventListener("click", () => {
+  console.log(`${quantity.textContent} items added`);
 });
