@@ -17,6 +17,7 @@
   </head>
   <body>
     <header>
+      <!-- full screen blur when not in focus -->
       <div id="blur"></div>
       <!-- navbar -->
       <nav class="navbar">
@@ -38,7 +39,10 @@
 
         <!-- cart and profile -->
         <div class="nav-right">
-          <img src="./images/icon-cart.svg" id="cart-icon" />
+          <div class="nav-cart-container">
+            <img src="./images/icon-cart.svg" id="cart-icon" />
+          </div>
+
           <img src="./images/image-avatar.png" id="avatar-icon" />
         </div>
       </nav>

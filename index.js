@@ -4,6 +4,7 @@ const closeIcon = document.querySelector(".close-icon");
 const blur = document.querySelector("#blur");
 const logo = document.querySelector("#logo");
 const cartIcon = document.querySelector("#cart-icon");
+const cartIconQuantity = document.querySelector(".nav-cart-container");
 const avatarIcon = document.querySelector("#avatar-icon");
 const imageContainer = document.querySelector("#carouselImageContainer");
 const leftArrow = document.querySelector(".carousel-button-left");
@@ -45,7 +46,7 @@ blur.addEventListener("click", () => {
 });
 
 cartIcon.addEventListener("click", () => {
-  console.log("open up model");
+  const div = document.createElement("div");
 });
 
 avatarIcon.addEventListener("click", () => {
@@ -99,4 +100,10 @@ plusButton.addEventListener("click", () => {
 
 addToCart.addEventListener("click", () => {
   console.log(`${quantity.textContent} items added`);
+  if (quantity.textContent > 0) {
+    const p = document.createElement("p");
+    p.textContent += quantity.textContent;
+    p.classList.add("cart-quicklook");
+    cartIconQuantity.append(p);
+  }
 });
