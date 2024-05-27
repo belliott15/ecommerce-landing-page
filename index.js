@@ -46,7 +46,23 @@ blur.addEventListener("click", () => {
 });
 
 cartIcon.addEventListener("click", () => {
-  const div = document.createElement("div");
+  console.log("you clicked the cart");
+  const container = document.createElement("div");
+  const title = document.createElement("h1");
+  const itemContainer = document.createElement("div");
+  const thumbnail = document.createElement("img");
+  const descriptionContainer = document.createElement("div");
+  const description = document.createElement("p");
+  const totalPrice = document.createElement("p");
+  const trash = document.createElement("img");
+  const checkout = document.createElement("button");
+
+  title.textContent = "Cart";
+  thumbnail.src = "./images/image-product-1-thumbnail.jpg";
+  description.textContent = "Fall Limited Edition Sneakers";
+  totalPrice.textContent = `$125.00 x ${quantity.textContent} = ${
+    quantity.textContent * 125.0
+  } `;
 });
 
 avatarIcon.addEventListener("click", () => {
