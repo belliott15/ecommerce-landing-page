@@ -14,6 +14,7 @@ const minusButton = document.querySelector(".minus-button");
 const plusButton = document.querySelector(".plus-button");
 const quantity = document.querySelector(".quantity");
 const addToCart = document.querySelector(".add-to-cart");
+const product = document.querySelector(".product");
 
 let counter = 0;
 
@@ -47,6 +48,7 @@ blur.addEventListener("click", () => {
 
 cartIcon.addEventListener("click", () => {
   console.log("you clicked the cart");
+
   const container = document.createElement("div");
   const title = document.createElement("h1");
   const itemContainer = document.createElement("div");
@@ -57,12 +59,27 @@ cartIcon.addEventListener("click", () => {
   const trash = document.createElement("img");
   const checkout = document.createElement("button");
 
+  //put content in the new elements
   title.textContent = "Cart";
   thumbnail.src = "./images/image-product-1-thumbnail.jpg";
   description.textContent = "Fall Limited Edition Sneakers";
   totalPrice.textContent = `$125.00 x ${quantity.textContent} = ${
     quantity.textContent * 125.0
   } `;
+  trash.src = "./images/icon-delete.svg";
+  checkout.textContent = "Checkout";
+
+  //style the elements
+  descriptionContainer.classList.add("description-container");
+  itemContainer.classList.add("item-container");
+  container.classList.add("cart-container");
+  checkout.classList.add("checkout-button");
+
+  //append elements to the containers
+  descriptionContainer.append(description, totalPrice, trash);
+  itemContainer.append(thumbnail, descriptionContainer);
+  container.append(title, itemContainer, checkout);
+  product.append(container);
 });
 
 avatarIcon.addEventListener("click", () => {
